@@ -73,7 +73,6 @@ public class VisibleSessionManagerTest
   {
     currentSessionManager.locationHelper = mock(LocationHelper.class);
     currentSessionManager.audioReader = mock(SimpleAudioReader.class);
-    currentSessionManager.externalSensors = mock(ExternalSensors.class);
     currentSessionManager.eventBus = mock(EventBus.class);
     currentSessionManager.currentSessionSensorManager = mock(CurrentSessionSensorManager.class);
 
@@ -256,7 +255,6 @@ public class VisibleSessionManagerTest
 
     verify(currentSessionManager.locationHelper).start();
     verify(currentSessionManager.audioReader).start();
-    verify(currentSessionManager.externalSensors).start();
   }
 
   @Test
@@ -474,7 +472,5 @@ public class VisibleSessionManagerTest
   public void shouldRestartExternalSensor()
   {
     currentSessionManager.currentSessionSensorManager.restartSensors();
-
-    verify(currentSessionManager.externalSensors).start();
   }
 }
