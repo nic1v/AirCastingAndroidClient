@@ -37,7 +37,6 @@ public class ContinuousTrackerTest
   {
     // given
     tracker.metadataHelper = mock(MetadataHelper.class);
-    when(tracker.metadataHelper.getPhoneModel()).thenReturn("EyPhone");
 
     // when
     tracker.startTracking(session, false);
